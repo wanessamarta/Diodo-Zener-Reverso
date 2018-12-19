@@ -29,4 +29,10 @@ set fit logfile "zenerreverso.log"
 #Produz o grafico com a curva ajustada e os dados das colunas 1 (x) e 2 (y)
 plot i(x) lc 'red' title 'Ajuste', 'zenerreverso_data.dat' u 1:2 pt 7 lc 'black' title 'Dados' with linespoint
 
+# Gera uma imagem com o resultado do gráfico no formato PNG
+set terminal pngcairo
+set output 'Resultado.png'
+replot
+unset output
+
 quit
